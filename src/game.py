@@ -14,4 +14,5 @@ class Game:
         
         # Place ships for player and AI 
         self._place_ships(self.player_grid) 
-        self._place_ships(self.ai_grid) 
+        self._place_ships(self.ai_grid)
+        grid.add_ship(ship) 
