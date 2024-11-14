@@ -16,3 +16,21 @@ class Game:
         self._place_ships(self.player_grid) 
         self._place_ships(self.ai_grid)
         grid.add_ship(ship) 
+
+    def _place_ships(self, grid): 
+        """ Randomly place ships on the grid. For simplicity, each ship is 3 cells long. """ 
+        ship_lengths = [3, 2] # Example ship sizes 
+        for length in ship_lengths: 
+            while True: 
+                start_x = random.randint(0, grid.size - 1) 
+                start_y = random.randint(0, grid.size - 1) 
+                orientation = random.choice(['H', 'V']) 
+                if orientation == 'H': 
+                    ship = [(start_x, start_y + i) for i in range(length)] 
+                else: ship = [(start_x + i, start_y) for i in range(length)] 
+                
+                try: 
+                    break 
+                    except ValueError: 
+                        continue 
+                        
