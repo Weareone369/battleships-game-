@@ -38,3 +38,8 @@ def receive_shot(self, x, y):
         return "miss" 
     else: 
         return "already_shot" 
+
+ def display(self, reveal=False): 
+        """Display the grid. Reveal ships if 'reveal' is True.""" 
+        for row in self.grid:
+            print(" ".join(cell if reveal or cell not in ['S'] else '~' for cell in row))
